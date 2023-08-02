@@ -1,0 +1,78 @@
+.titleRow,
+.flowRate,
+.titleTota {
+    color: #FFF;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1rem;
+}
+
+.sangria {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+    margin-left: 0.5rem;
+}
+
+.instructions {
+    color: #FFF;
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1rem;
+    margin-top: 0.6rem;
+}
+
+.flowRate,
+.total {
+    margin-top: 1rem;
+}
+
+.total {
+    margin-bottom: 1rem;
+}
+
+.flow,
+.totalValue {
+    margin-left: 0.4rem;
+    color: #201C1C;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.8rem;
+}
+
+.highFlow {
+    color: #201C1C;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1rem;
+    margin-left: 1rem;
+}
+
+.rightFlow {
+    color: #FFF;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 0.75rem;
+}
+
+.alertHighFlow {
+    margin-left: 0.3rem;
+}
+
+.tapId,
+.serverIp,
+.tapIp {
+    color: #FFF;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+}
+
+.tapId {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.tapIp {
+    margin-left: 7%;
+}

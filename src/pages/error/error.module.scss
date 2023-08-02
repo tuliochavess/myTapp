@@ -1,0 +1,38 @@
+.tapNumber {
+    position: absolute;
+}
+
+.errorContainer {
+    width: 25rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.errorComponent {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem;
+}
+
+.errorTtile {
+    color: #FFF;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.75rem;
+}
+
+.tapId {
+    color: #FCB813;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.75rem;
+}
+
+.errorImg {
+    margin: 3rem 0;
+    max-height: 10rem;
+}

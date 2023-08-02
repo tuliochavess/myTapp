@@ -1,0 +1,38 @@
+.nameOrStyleContainer {
+  color: #fff;
+
+  @media (max-width: 1280px) {
+    height: 5.25rem;
+  }
+
+  @media (min-width: 1281px) and (max-width: 1920px) {
+    height: 7rem;
+  }
+}
+
+.title {
+  font-weight: 700;
+  display: block;
+
+  @media (max-width: 1280px) {
+    font-size: 1rem;
+    line-height: 1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  @media (min-width: 1281px) and (max-width: 1920px) {
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    margin-bottom: 0.2rem;
+  }
+}
+
+.content,
+.contentBlue {
+  font-style: normal;
+  font-weight: 700;
+}
+
+.contentBlue {
+  color: #009DFF;
+}

@@ -1,0 +1,145 @@
+.cleaningContainer {
+    width: 25rem;
+    display: grid;
+}
+
+.title {
+    display: flex;
+}
+
+.nameStyleModeTop {
+    margin-top: 0.75rem;
+    margin-left: 0.5rem;
+}
+
+.employeeRow {
+    margin-top: 2rem;
+}
+
+.employeeLabel {
+    color: #FFF;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1rem;
+}
+
+.employee {
+    color: #FCB813;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    margin-left: 0.4rem;
+}
+
+.instructions {
+    color: #FFF;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.125rem;
+    margin-top: 1rem;
+}
+
+.flowContainer {
+    margin-top: 2.5rem;
+}
+
+.flowTitle {
+    color: #FCB813;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 2rem;
+}
+
+.flowRateRow {
+    margin-top: 0.75rem;
+}
+
+.flowRate,
+.totalTitle {
+    color: #FFF;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1rem;
+}
+
+.flowValue {
+    color: #FCB813;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 2rem;
+    margin-left: 0.4rem;
+}
+
+.flowInstructionRow {
+    margin-top: 0.25rem;
+    display: flex;
+    align-items: center;
+}
+
+.flowInstruction {
+    color: #FFF;
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 0.75rem;
+    margin-left: 0.4rem;
+}
+
+.totalRow {
+    margin-top: 1rem;
+}
+
+.total {
+    color: #FCB813;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    margin-left: 0.4rem;
+}
+
+.infoContainer {
+    margin-top: 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.labelAndValue {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.label {
+    color: #FFF;
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 0.75rem;
+    margin-bottom: 0.4rem;
+}
+
+.value {
+    color: #FCB813;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.status {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background-color: red;
+    margin-left: 0.4rem;
+}
+
+.operationalInstruction {
+    text-align: center;
+    color: #FFF;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.125rem;
+    margin-top: 3rem;
+    padding: 0 2rem;
+}
