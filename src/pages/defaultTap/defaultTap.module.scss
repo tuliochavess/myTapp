@@ -1,124 +1,180 @@
-  .defaultTapContainer {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    height: 100%;
-    background: radial-gradient(58.76% 73.16% at 126.72% 34.58%, rgba(249, 182, 3, 0.12) 17.58%, rgba(0, 0, 0, 0.00) 100%);
+.defaultTapContainer,
+.defaultTapContainer2or1 {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100%;
+}
 
-    @media (max-width: 1280px) {
-      width: 25rem;
-    }
-
-    @media (min-width: 1281px) and (max-width: 1920px) {
-      width: 37rem;
-    }
+.defaultTapContainer {
+  @media (max-width: 1280px) {
+    width: 25rem;
   }
 
-  .numberAndTitleOrStyle {
-    display: flex;
+  @media (min-width: 1281px) and (max-width: 1920px) {
+    width: 37rem;
+  }
+}
+
+.defaultTapContainer2or1 {
+  @media (max-width: 1280px) {
+    width: 37rem;
   }
 
-  .rowImage {
-    display: grid;
-    grid-template-columns: auto auto;
-    justify-content: center;
-    height: 100%;
-    align-items: end;
+  @media (min-width: 1281px) and (max-width: 1920px) {
+    width: 57rem;
+  }
+}
+
+.numberAndTitleOrStyle {
+  display: flex;
+}
+
+.rowImage {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  height: 100%;
+  align-items: end;
+}
+
+.image {
+  height: 100%;
+}
+
+.logo {
+  width: 7.5rem;
+  height: 7.5rem;
+  margin-bottom: 1rem;
+}
+
+.ibuAndAbv,
+.ibuAndAbv2or1 {
+  display: flex;
+}
+
+.ibuAndAbv {
+  @media (min-width: 1281px) and (max-width: 1920px) {
+    flex-direction: column;
+    margin-left: 2rem;
+  }
+}
+
+.ibuAndAbv2or1 {
+  flex-direction: column;
+
+  @media (max-width: 1280px) {
+    margin-left: 1.3rem;
   }
 
-  .image {
-    height: 100%;
+  @media (min-width: 1281px) and (max-width: 1920px) {
+    margin-left: 3rem;
+    margin-right: 14rem;
   }
 
-  .logo {
-    width: 7.5rem;
-    height: 7.5rem;
+
+}
+
+.firstElement,
+.firstElement2or1 {
+  margin-right: 0.75rem;
+}
+
+.firstElement {
+  @media (min-width: 1281px) and (max-width: 1920px) {
     margin-bottom: 1rem;
+    margin-top: 1rem;
   }
+}
 
-  .ibuAndAbv {
-    display: flex;
-
-    @media (min-width: 1281px) and (max-width: 1920px) {
-      flex-direction: column;
-      margin-left: 2rem;
-    }
-  }
-
-  .firstElement {
-    margin-right: 0.75rem;
-
-    @media (min-width: 1281px) and (max-width: 1920px) {
-      margin-bottom: 1rem;
-      margin-top: 1rem;
-    }
-  }
-
-  .price {
+.firstElement2or1 {
+  @media (max-width: 1280px) {
+    margin-bottom: 1rem;
     margin-top: 1rem;
   }
 
-  .nameStyleModeTop {
-    margin-top: 0.75rem;
-    margin-left: 0.5rem;
-  }
-
-  .infosAndQrCode {
-    display: flex;
-    margin-top: 0.75rem;
-
-    @media (min-width: 1281px) and (max-width: 1920px) {
-      align-items: center;
-    }
-  }
-
-  .qrCode {
-    margin-left: 2.75rem;
-
-    @media (min-width: 1281px) and (max-width: 1920px) {
-      margin-left: 1.8rem;
-    }
-  }
-
-  .firstRow {
+  @media (min-width: 1281px) and (max-width: 1920px) {
     margin-bottom: 1rem;
+    margin-top: 1rem;
   }
+}
 
-  .thirdRow {
-    margin: 1rem 0 0.25rem 0;
-  }
+.price {
+  margin-top: 1rem;
+}
 
-  .modalClient,
-  .modalSangria,
-  .modalStaff {
-    position: fixed;
-    bottom: -150vh;
-    padding: 0.5rem;
-    width: 24rem;
-    transition: bottom 0.3s ease-out;
-    z-index: 10;
-    border-radius: 0.5rem 0.5rem 0rem 0rem;
-  }
+.nameStyleModeTop {
+  margin-top: 0.75rem;
+  margin-left: 0.5rem;
+}
 
-  .modalClient.show,
-  .modalSangria.show,
-  .modalStaff.show {
-    bottom: 0;
-  }
+.infosAndQrCode {
+  display: flex;
+  margin-top: 0.75rem;
 
-  .modalClient {
-    background: #FCB813;
-    height: 9rem;
+  @media (min-width: 1281px) and (max-width: 1920px) {
+    align-items: center;
   }
+}
 
-  .modalSangria,
-  .modalStaff {
-    height: 15rem;
-  }
+.qrCode {
+  margin-left: 2.75rem;
 
-  .modalSangria {
-    background: #B21E19;
+  @media (min-width: 1281px) and (max-width: 1920px) {
+    margin-left: 1.8rem;
   }
+}
 
-  .modalStaff {
-    background: #6DA34D;
+.firstRow {
+  margin-bottom: 1rem;
+}
+
+.thirdRow {
+  margin: 1rem 0 0.25rem 0;
+}
+
+.modalClient,
+.modalSangria,
+.modalStaff {
+  position: fixed;
+  bottom: -150vh;
+  padding: 0.5rem;
+  width: 24rem;
+  transition: bottom 0.3s ease-out;
+  z-index: 10;
+  border-radius: 0.5rem 0.5rem 0rem 0rem;
+}
+
+.modalClient2or1 {
+  @media (max-width: 1280px) {
+    width: 30rem;
+    padding-left: 6.5rem;
   }
+  
+  @media (min-width: 1281px) and (max-width: 1920px) {}
+  width: 40.5rem;
+  padding-left: 16rem;
+}
+
+.modalClient.show,
+.modalSangria.show,
+.modalStaff.show {
+  bottom: 0;
+}
+
+.modalClient {
+  background: #FCB813;
+  height: 9rem;
+}
+
+.modalSangria,
+.modalStaff {
+  height: 15rem;
+}
+
+.modalSangria {
+  background: #B21E19;
+}
+
+.modalStaff {
+  background: #6DA34D;
+}

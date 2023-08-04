@@ -4,6 +4,7 @@ import alertOrange from '../../assets/img/alertOrange.svg'
 import styles from "./cleaning.module.scss";
 
 interface Props {
+    tappAmount: number;
     tapNumber: number
     employee: string
     flow: number
@@ -18,19 +19,44 @@ interface Props {
 }
 
 export default function Cleaning(props: Props) {
-    return <div className={styles.cleaningContainer}>
+
+    function renderInfos(label: string, value: string | number) {
+        return <div className={props.tappAmount == 3 ?
+            styles.labelAndValue :
+            styles.labelAndValue2or1}>
+            <span className={props.tappAmount == 3 ?
+                styles.label :
+                styles.label2or1}>
+                {label}
+            </span>
+            <span className={props.tappAmount == 3 ?
+                styles.value :
+                styles.value2or1}>
+                {value}
+            </span>
+        </div>
+    }
+
+    return <div className={props.tappAmount == 3 ?
+        styles.cleaningContainer :
+        styles.cleaningContainer2or1}>
         <div className={styles.firstRow}>
             <div className={styles.title}>
                 <TapNumber number={props.tapNumber} />
                 <NameStyleMode
                     type={"mode"}
                     content={'LIMPEZA'}
-                    class={styles.nameStyleModeTop} />
+                    class={styles.nameStyleModeTop}
+                    tappAmount={0} />
             </div>
         </div>
         <div className={styles.employeeRow}>
-            <span className={styles.employeeLabel}>Funcionário:</span>
-            <span className={styles.employee}>{props.employee}</span>
+            <span className={props.tappAmount == 3 ?
+                styles.employeeLabel :
+                styles.employeeLabel2or1}>Funcionário:</span>
+            <span className={props.tappAmount == 3 ?
+                styles.employee :
+                styles.employee2or1}>{props.employee}</span>
         </div>
         <span className={styles.instructions}>
             Este modo não realiza nenhuma cobrança de créditos, apenas registra os valores servidos para relatório.
@@ -59,51 +85,16 @@ export default function Cleaning(props: Props) {
             </div>
         </div>
         <div className={styles.infoContainer}>
-            <div className={styles.labelAndValue}>
-                <span className={styles.label}>
-                    Última limpeza:
-                </span>
-                <span className={styles.value}>
-                    {props.dateLastClean}
-                </span>
-            </div>
-            <div className={styles.labelAndValue}>
-                <span className={styles.label}>
-                    Tap ID:
-                </span>
-                <span className={styles.value}>
-                    {props.tapId}
-                </span>
-            </div>
-            <div className={styles.labelAndValue}>
-                <span className={styles.label}>
-                    Previsão para próx. limpeza:
-                </span>
-                <span className={styles.value}>
-                    {props.dateNextClean}
-                </span>
-            </div>
-            <div className={styles.labelAndValue}>
-                <span className={styles.label}>
-                    IP da Tap:
-                </span>
-                <span className={styles.value}>
-                    {props.tapIp}
-                </span>
-            </div>
-            <div className={styles.labelAndValue}>
-                <span className={styles.label}>
-                    Quantidade indicada de líquido:
-                </span>
-                <span className={styles.value}>
-                    {`${props.liter} Litros`}
-                </span>
-            </div>
-            <div className={styles.labelAndValue}>
-                <span className={styles.label}>
+            {renderInfos('Última limpeza:', props.dateLastClean)}
+            {renderInfos('Tap ID:', props.tapId)}
+            {renderInfos('Previsão para próx. limpeza:', props.dateNextClean)}
+            {renderInfos('IP da Tap:', props.tapIp)}
+            {renderInfos('Quantidade indicada de líquido:', `${props.liter} Litros`)}
+            <div className={props.tappAmount == 3 ? styles.labelAndValue : styles.labelAndValue2or1}>
+                <span className={props.tappAmount == 3 ? styles.label : styles.label2or1}>
                     IP do servidor:
                 </span>
-                <span className={styles.value}>
+                <span className={props.tappAmount == 3 ? styles.value : styles.value2or1}>
                     {props.serverp} <div
                         className={styles.status}
                         style={props.serverStatusOk ?
@@ -114,7 +105,9 @@ export default function Cleaning(props: Props) {
                 </span>
             </div>
         </div>
-        <div className={styles.operationalInstruction}>
+        <div className={props.tappAmount == 3 ?
+            styles.operationalInstruction :
+            styles.operationalInstruction2or1}>
             Aumente a vazão até o máximo e puxe a tap para correr o líquido até a quantidade indicada.
         </div>
     </div>

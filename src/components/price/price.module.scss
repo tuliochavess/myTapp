@@ -8,10 +8,14 @@
   flex-direction: column;
 }
 
-.ml {
+.ml,
+.ml2or1 {
   color: #fff;
   font-weight: 700;
+  white-space: nowrap;
+}
 
+.ml {
   @media (max-width: 1280px) {
     font-size: 1rem;
     line-height: 1rem;
@@ -24,10 +28,25 @@
   }
 }
 
-.currency {
+.ml2or1 {
+  @media (max-width: 1280px) {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+
+  @media (min-width: 1281px) and (max-width: 1920px) {
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+  }
+}
+
+.currency,
+.currency2or1 {
   color: #fcb813;
   font-weight: 700;
+}
 
+.currency {
   @media (max-width: 1280px) {
     font-size: 3.25rem;
     line-height: 3.25rem;
@@ -39,11 +58,26 @@
   }
 }
 
-.value {
+.currency2or1 {
+  @media (max-width: 1280px) {
+    font-size: 4.5rem;
+    line-height: 4.5rem;
+  }
+
+  @media (min-width: 1281px) and (max-width: 1920px) {
+    font-size: 5rem;
+    line-height: 5rem;
+  }
+}
+
+.value,
+.value2or1 {
   color: #fff;
   font-weight: 700;
   margin-left: 0.8rem;
+}
 
+.value {
   @media (max-width: 1280px) {
     font-size: 5rem;
     line-height: 4.5rem;
@@ -52,5 +86,17 @@
   @media (min-width: 1281px) and (max-width: 1920px) {
     font-size: 5.5rem;
     line-height: 5.5rem;
+  }
+}
+
+.value2or1 {
+  @media (max-width: 1280px) {
+    font-size: 7rem;
+    line-height: 6rem;
+  }
+
+  @media (min-width: 1281px) and (max-width: 1920px) {
+    font-size: 8rem;
+    line-height: 7rem;
   }
 }

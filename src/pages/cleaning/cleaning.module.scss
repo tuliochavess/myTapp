@@ -1,6 +1,26 @@
-.cleaningContainer {
-    width: 25rem;
+.cleaningContainer,
+.cleaningContainer2or1 {
     display: grid;
+}
+
+.cleaningContainer {
+    @media (max-width: 1280px) {
+        width: 25rem;
+    }
+
+    @media (min-width: 1281px) and (max-width: 1920px) {
+        width: 37rem;
+    }
+}
+
+.cleaningContainer2or1 {
+    @media (max-width: 1280px) {
+        width: 37rem;
+    }
+
+    @media (min-width: 1281px) and (max-width: 1920px) {
+        width: 57rem;
+    }
 }
 
 .title {
@@ -16,27 +36,81 @@
     margin-top: 2rem;
 }
 
-.employeeLabel {
+.employeeLabel,
+.employeeLabel2or1 {
     color: #FFF;
-    font-size: 1rem;
     font-weight: 400;
-    line-height: 1rem;
+}
+
+.employeeLabel {
+    @media (max-width: 1280px) {
+        font-size: 1rem;
+        line-height: 1rem;
+    }
+
+    @media (min-width: 1281px) and (max-width: 1920px) {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+}
+
+.employeeLabel2or1 {
+    @media (max-width: 1280px) {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+    }
+
+    @media (min-width: 1281px) and (max-width: 1920px) {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+}
+
+.employee,
+.employee2or1 {
+    color: #FCB813;
+    font-weight: 600;
+    margin-left: 0.4rem;
 }
 
 .employee {
-    color: #FCB813;
-    font-size: 1.5rem;
-    font-weight: 600;
-    line-height: 1.5rem;
-    margin-left: 0.4rem;
+    @media (max-width: 1280px) {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+    }
+
+    @media (min-width: 1281px) and (max-width: 1920px) {
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+}
+
+.employee2or1 {
+    @media (max-width: 1280px) {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+
+    @media (min-width: 1281px) and (max-width: 1920px) {
+        font-size: 3rem;
+        line-height: 3rem;
+    }
 }
 
 .instructions {
     color: #FFF;
-    font-size: 0.875rem;
     font-weight: 400;
-    line-height: 1.125rem;
     margin-top: 1rem;
+
+    @media (max-width: 1280px) {
+        font-size: 0.875rem;
+        line-height: 1.125rem;
+    }
+
+    @media (min-width: 1281px) and (max-width: 1920px) {
+        font-size: 1.25rem;
+        line-height: 2rem;
+    }
 }
 
 .flowContainer {
@@ -45,43 +119,89 @@
 
 .flowTitle {
     color: #FCB813;
-    font-size: 2rem;
     font-weight: 600;
-    line-height: 2rem;
+
+    @media (max-width: 1280px) {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+
+    @media (min-width: 1281px) and (max-width: 1920px) {
+        font-size: 3rem;
+        line-height: 3rem;
+    }
 }
 
 .flowRateRow {
-    margin-top: 0.75rem;
+    @media (max-width: 1280px) {
+        margin-top: 0.75rem;
+    }
+
+    @media (min-width: 1281px) and (max-width: 1920px) {
+        margin-top: 1rem;
+    }
 }
 
 .flowRate,
 .totalTitle {
     color: #FFF;
-    font-size: 1rem;
     font-weight: 400;
-    line-height: 1rem;
+
+    @media (max-width: 1280px) {
+        font-size: 1rem;
+        line-height: 1rem;
+    }
+
+    @media (min-width: 1281px) and (max-width: 1920px) {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
 }
 
 .flowValue {
     color: #FCB813;
-    font-size: 2rem;
     font-weight: 600;
-    line-height: 2rem;
     margin-left: 0.4rem;
+
+    @media (max-width: 1280px) {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+
+    @media (min-width: 1281px) and (max-width: 1920px) {
+        font-size: 3rem;
+        line-height: 3rem;
+    }
 }
 
 .flowInstructionRow {
-    margin-top: 0.25rem;
     display: flex;
     align-items: center;
+
+    @media (max-width: 1280px) {
+        margin-top: 0.25rem;
+    }
+
+    @media (min-width: 1281px) and (max-width: 1920px) {
+        margin-top: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
 }
 
 .flowInstruction {
     color: #FFF;
-    font-size: 0.75rem;
     font-weight: 400;
-    line-height: 0.75rem;
     margin-left: 0.4rem;
+
+    @media (max-width: 1280px) {
+        font-size: 0.75rem;
+        line-height: 0.75rem;
+    }
+
+    @media (min-width: 1281px) and (max-width: 1920px) {
+        font-size: 1.25rem;
+        line-height: 1.25rem;
+    }
 }
 
 .totalRow {
@@ -90,10 +210,18 @@
 
 .total {
     color: #FCB813;
-    font-size: 1.25rem;
     font-weight: 600;
-    line-height: 1.25rem;
     margin-left: 0.4rem;
+
+    @media (max-width: 1280px) {
+        font-size: 1.25rem;
+        line-height: 1.25rem;
+    }
+
+    @media (min-width: 1281px) and (max-width: 1920px) {
+        font-size: 2.25rem;
+        line-height: 2.25rem;
+    }
 }
 
 .infoContainer {
@@ -103,43 +231,148 @@
     grid-template-rows: 1fr 1fr 1fr;
 }
 
-.labelAndValue {
+.labelAndValue,
+.labelAndValue2or1 {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1rem;
+}
+
+.labelAndValue {
+    @media (max-width: 1280px) {
+        margin-bottom: 1rem;
+    }
+
+    @media (min-width: 1281px) and (max-width: 1920px) {
+        margin-bottom: 2rem;
+    }
+}
+
+.labelAndValue2or1 {
+    @media (max-width: 1280px) {
+        margin-bottom: 1.5rem;
+    }
+
+    @media (min-width: 1281px) and (max-width: 1920px) {
+        margin-bottom: 2rem;
+    }
+}
+
+.label,
+.label2or1 {
+    color: #FFF;
+    font-weight: 400;
 }
 
 .label {
-    color: #FFF;
-    font-size: 0.75rem;
-    font-weight: 400;
-    line-height: 0.75rem;
-    margin-bottom: 0.4rem;
+    @media (max-width: 1280px) {
+        font-size: 0.75rem;
+        line-height: 0.75rem;
+        margin-bottom: 0.3rem;
+    }
+
+    @media (min-width: 1281px) and (max-width: 1920px) {
+        font-size: 1.25rem;
+        line-height: 1.25rem;
+        margin-bottom: 0.4rem;
+    }
 }
 
-.value {
+.label2or1 {
+    @media (max-width: 1280px) {
+        font-size: 1rem;
+        line-height: 1rem;
+        margin-bottom: 0.3rem;
+    }
+
+    @media (min-width: 1281px) and (max-width: 1920px) {
+        font-size: 1.25rem;
+        line-height: 1.25rem;
+        margin-bottom: 0.4rem;
+    }
+}
+
+.value,
+.value2or1 {
     color: #FCB813;
-    font-size: 1rem;
     font-weight: 600;
-    line-height: 1rem;
     display: flex;
     align-items: center;
 }
 
+.value {
+    @media (max-width: 1280px) {
+        font-size: 1rem;
+        line-height: 1rem;
+    }
+
+    @media (min-width: 1281px) and (max-width: 1920px) {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+    }
+}
+
+.value2or1 {
+    @media (max-width: 1280px) {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+    }
+
+    @media (min-width: 1281px) and (max-width: 1920px) {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+    }
+}
+
 .status {
-    width: 0.75rem;
-    height: 0.75rem;
     border-radius: 50%;
-    background-color: red;
     margin-left: 0.4rem;
+
+    @media (max-width: 1280px) {
+        width: 0.75rem;
+        height: 0.75rem;
+    }
+
+    @media (min-width: 1281px) and (max-width: 1920px) {
+        width: 1rem;
+        height: 1rem;
+    }
+}
+
+.operationalInstruction,
+.operationalInstruction2or1 {
+    text-align: center;
+    color: #FFF;
+    font-weight: 600;
 }
 
 .operationalInstruction {
-    text-align: center;
-    color: #FFF;
-    font-size: 0.875rem;
-    font-weight: 600;
-    line-height: 1.125rem;
-    margin-top: 3rem;
-    padding: 0 2rem;
+    @media (max-width: 1280px) {
+        font-size: 0.875rem;
+        line-height: 1.125rem;
+        padding: 0 2rem;
+        margin-top: 3rem;
+    }
+
+    @media (min-width: 1281px) and (max-width: 1920px) {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        padding: 0 1rem;
+        margin-top: 1rem;
+    }
+}
+
+.operationalInstruction2or1 {
+    @media (max-width: 1280px) {
+        font-size: 1rem;
+        line-height: 1.3rem;
+        padding: 0 4rem;
+        margin-top: 1.5rem;
+    }
+
+    @media (min-width: 1281px) and (max-width: 1920px) {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        padding: 0 4rem;
+        margin-top: 2rem;
+    }
 }

@@ -6,6 +6,7 @@ interface Props {
     credit: number
     volume: number
     state: "ready" | "serving" | "done"
+    tappAmount: number
 }
 
 function showState(state: string) {

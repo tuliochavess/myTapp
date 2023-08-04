@@ -15,6 +15,7 @@ interface Props {
     type: 'default' | 'router' | 'server' | 'cable' | 'internet' | 'maintenance' | 'closed' | 'unavailable' | 'barrel'
     tapNumber: number
     tapId?: number
+    tappAmount: number
 }
 
 export default function ErrorPage(props: Props) {
@@ -72,13 +73,19 @@ export default function ErrorPage(props: Props) {
 
     function renderCustomError(type: string, tapId?: number) {
         return <div className={styles.errorComponent}>
-            <span className={styles.errorTtile}>
+            <span className={props.tappAmount == 3 ?
+                styles.errorTtile :
+                styles.errorTtile2or1}>
                 {renderErrorTitle(type)}
             </span>
             <img src={renderErrorImg(type)}
-                className={styles.errorImg} />
+                className={props.tappAmount == 3 ?
+                    styles.errorImg :
+                    styles.errorImg2or1} />
             {tapId ?
-                <span className={styles.tapId}>
+                <span className={props.tappAmount == 3 ?
+                    styles.tapId :
+                    styles.tapId2or1}>
                     {`ID da tap: ${tapId}`}
                 </span> :
                 null}
@@ -102,7 +109,9 @@ export default function ErrorPage(props: Props) {
         <div className={styles.tapNumber} onClick={() => setDefaultError(!defaultError)}>
             <TapNumber number={props.tapNumber} />
         </div>
-        <div className={styles.errorContainer}>
+        <div className={props.tappAmount == 3 ?
+            styles.errorContainer :
+            styles.errorContainer2or1}>
             {defaultError ?
                 renderDefaultError() :
                 renderError(props.type, props.tapId)}

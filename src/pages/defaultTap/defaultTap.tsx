@@ -8,6 +8,7 @@ import ModalClient from "../../components/modalClient";
 import ModalSangria from "../../components/modalSangria/modalSangria";
 import ModalStaff from "../../components/modalStaff/modalStaff";
 import NameStyleMode from "../../components/nameStyleMode";
+import { backGround } from "../../helper/constants";
 
 interface Client {
   clientName?: string
@@ -32,6 +33,7 @@ interface Staff {
 }
 
 interface Props extends Client, Sangria, Staff {
+  tappAmount: number;
   tapNumber: number;
   type: "name" | "style";
   name: string;
@@ -52,12 +54,15 @@ export default function DefaultTap(props: Props) {
   function renderModal(type: string) {
     if (type === 'client') {
       return <div
-        className={`${styles.modalClient} ${displayModal ? styles.show : ' '}`}>
+        className={`${styles.modalClient} ${displayModal ? styles.show : ''} ${props.tappAmount == 3 ?
+          '' :
+          styles.modalClient2or1}`}>
         <ModalClient
           name={props.clientName!}
           credit={props.clientCredit!}
           volume={props.clientVolume!}
-          state={props.clientState!} />
+          state={props.clientState!}
+          tappAmount={props.tappAmount!} />
       </div>
     }
     if (type === 'sangria') {
@@ -88,8 +93,8 @@ export default function DefaultTap(props: Props) {
     return null
   }
 
-  function renderInfosAndQrCode(width: number) {
-    if (width >= 1280 && width < 1919) {
+  function renderInfosAndQrCode(width: number, amount: number) {
+    if ((width >= 1280 && width < 1919) && amount == 3) {
       return <div className={styles.infosAndQrCode}>
         <div>
           <div className={styles.ibuAndAbv}>
@@ -101,16 +106,34 @@ export default function DefaultTap(props: Props) {
             <IbuOrAbv type="abv" value={props.abv} />
           </div>
           <div className={styles.price}>
-            <Price ml="100" value={props.price} />
+            <Price ml="100" value={props.price} tappAmount={props.tappAmount} />
           </div>
         </div>
         <QrCode qrCode={props.qrCode} class={styles.qrCode} />
       </div>
     }
-    if (width >= 1920 && width < 2959) {
+
+    if ((width >= 1280 && width < 1919) && amount < 3) {
       return <div className={styles.infosAndQrCode}>
         <div className={styles.price}>
-          <Price ml="100" value={props.price} />
+          <Price ml="100" value={props.price} tappAmount={props.tappAmount} />
+        </div>
+        <div className={styles.ibuAndAbv2or1}>
+          <IbuOrAbv
+            type="ibu"
+            value={props.ibu}
+            class={styles.firstElement2or1}
+          />
+          <IbuOrAbv type="abv" value={props.abv} />
+        </div>
+        <QrCode qrCode={props.qrCode} class={styles.qrCode} />
+      </div>
+    }
+
+    if ((width >= 1920 && width < 2959) && amount == 3) {
+      return <div className={styles.infosAndQrCode}>
+        <div className={styles.price}>
+          <Price ml="100" value={props.price} tappAmount={props.tappAmount} />
         </div>
         <div className={styles.ibuAndAbv}>
           <IbuOrAbv
@@ -123,15 +146,37 @@ export default function DefaultTap(props: Props) {
         <QrCode qrCode={props.qrCode} class={styles.qrCode} />
       </div>
     }
+
+    if ((width >= 1920 && width < 2959) && amount < 3) {
+      return <div className={styles.infosAndQrCode}>
+        <div className={styles.price}>
+          <Price ml="100" value={props.price} tappAmount={props.tappAmount} />
+        </div>
+        <div className={styles.ibuAndAbv2or1}>
+          <IbuOrAbv
+            type="ibu"
+            value={props.ibu}
+            class={styles.firstElement2or1}
+          />
+          <IbuOrAbv type="abv" value={props.abv} />
+        </div>
+        <QrCode qrCode={props.qrCode} class={styles.qrCode} />
+      </div>
+    }
   }
 
   return (
-    <div className={styles.defaultTapContainer}>
+    <div
+      className={props.tappAmount == 3 ?
+        styles.defaultTapContainer :
+        styles.defaultTapContainer2or1}
+      style={props.tappAmount >= 2 ? { background: backGround } : {}}>
       <div className={styles.firstRow}
         onClick={() => setDisplayModal(!displayModal)}>
         <div className={styles.numberAndTitleOrStyle}>
           <TapNumber number={props.tapNumber} />
           <NameStyleMode
+            tappAmount={props.tappAmount}
             type={props.type === 'name' ? 'name' : 'style'}
             content={props.type === 'name' ? props.name : props.style}
             class={styles.nameStyleModeTop} />
@@ -154,10 +199,11 @@ export default function DefaultTap(props: Props) {
       <div className={styles.thirdRow}>
         <div>
           <NameStyleMode
+            tappAmount={props.tappAmount}
             type={props.type === 'name' ? 'style' : 'name'}
             content={props.type === 'name' ? props.style : props.name} />
         </div>
-        {renderInfosAndQrCode(screenWidth)}
+        {renderInfosAndQrCode(screenWidth, props.tappAmount)}
         {renderModal(props.modal)}
       </div>
     </div>
