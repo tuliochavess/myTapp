@@ -1,7 +1,12 @@
 .nameOrStyleContainer {
   color: #fff;
 
-  @media (max-width: 1280px) {
+  @media (max-width: 414px) {
+    height: 4rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 721px) and (max-width: 1280px) {
     height: 5.25rem;
   }
 
@@ -14,7 +19,13 @@
   font-weight: 700;
   display: block;
 
-  @media (max-width: 1280px) {
+  @media (min-width: 415px) and (max-width: 720px) {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  @media (min-width: 721px) and (max-width: 1280px) {
     font-size: 1rem;
     line-height: 1rem;
     margin-bottom: 0.25rem;
@@ -24,6 +35,12 @@
     font-size: 1.6rem;
     line-height: 1.6rem;
     margin-bottom: 0.2rem;
+  }
+
+  @media (min-width: 1000px) and (max-width: 1080px) {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    margin-bottom: 0.4rem;
   }
 }
 

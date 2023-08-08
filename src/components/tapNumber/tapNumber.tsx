@@ -3,6 +3,7 @@ import logo from "../../assets/img/logo-black.svg";
 
 interface Props {
   number: number;
+  tappAmount: number;
 }
 
 export default function TapNumber(props: Props) {

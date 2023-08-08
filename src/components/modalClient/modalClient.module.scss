@@ -1,7 +1,151 @@
-.modalClientContainer {
+.modalClientContainer,
+.modalClientContainer2or1 {
     display: grid;
-    grid-template-columns: 17rem 7rem;
-    grid-template-rows: 3rem 6rem;
+}
+
+.modalClientContainer {
+    @media (min-width: 721px) and (max-width: 1280px) {
+        grid-template-columns: 17rem 7rem;
+        grid-template-rows: 3rem 6rem;
+    }
+
+    @media (min-width: 1281px) and (max-width: 1920px) {
+        grid-template-columns: 25rem 10rem;
+        grid-template-rows: 4rem 6rem;
+    }
+}
+
+.modalClientContainer2or1 {
+    @media (max-width: 414px) {
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    @media (min-width: 415px) and (max-width: 720px) {
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 1fr;
+        width: 100%;
+    }
+
+    @media (min-width: 721px) and (max-width: 1280px) {
+        grid-template-columns: 20rem 12rem;
+        grid-template-rows: 3rem 6rem;
+    }
+
+    @media (min-width: 1281px) and (max-width: 1920px) {
+        grid-template-columns: 25rem 14rem;
+        grid-template-rows: 5rem 5rem;
+    }
+
+    @media (min-width: 1000px) and (max-width: 1080px) {
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: 1fr;
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .nameRow {
+        @media (max-width: 414px) {
+            font-size: 1.4rem;
+            line-height: 1.4rem;
+        }
+
+        @media (min-width: 415px) and (max-width: 720px) {
+            font-size: 2.5rem;
+            line-height: 2.5rem;
+        }
+
+        @media (min-width: 721px) and (max-width: 1280px) {
+            font-size: 1.8rem;
+            line-height: 1.8rem;
+        }
+
+        @media (min-width: 1281px) and (max-width: 1920px) {
+            font-size: 2rem;
+            line-height: 2rem;
+        }
+
+        @media (min-width: 1000px) and (max-width: 1080px) {
+            font-size: 3rem;
+            line-height: 3rem;
+        }
+    }
+
+    .instructionOrValue,
+    .credtTitle,
+    .volumeTitle {
+        @media (max-width: 414px) {
+            font-size: 1rem;
+            line-height: 1rem;
+            margin-top: 0.2rem;
+        }
+
+        @media (min-width: 415px) and (max-width: 720px) {
+            font-size: 1.5rem;
+            line-height: 1.5rem;
+            margin-top: 0.3rem;
+        }
+
+        @media (min-width: 721px) and (max-width: 1280px) {
+            font-size: 1.2rem;
+            line-height: 1.2rem;
+        }
+
+        @media (min-width: 1281px) and (max-width: 1920px) {
+            font-size: 1.5rem;
+            line-height: 1.5rem;
+        }
+
+        @media (min-width: 1000px) and (max-width: 1080px) {
+            font-size: 2.5rem;
+            line-height: 3rem;
+        }
+    }
+
+    .readyToServe,
+    .serving {
+        @media (max-width: 414px) {
+            font-size: 1.5rem !important;
+            line-height: 6rem !important;
+        }
+
+        @media (min-width: 415px) and (max-width: 720px) {
+            font-size: 2rem !important;
+            line-height: 9rem !important;
+        }
+
+        @media (max-width: 414px) {
+            font-size: 1rem;
+            line-height: 1rem;
+        }
+
+        @media (min-width: 1281px) and (max-width: 1920px) {
+            font-size: 2.5rem;
+            line-height: 6.5rem;
+        }
+
+        @media (min-width: 1000px) and (max-width: 1080px) {
+            font-size: 3rem;
+            line-height: 3rem;
+            margin: 6rem 0 0 0;
+        }
+    }
+
+    .value,
+    .volume {
+        font-size: 2rem;
+        line-height: 2rem;
+
+        @media (min-width: 415px) and (max-width: 720px) {
+            font-size: 2.5rem;
+            line-height: 2.5rem;
+        }
+
+        @media (min-width: 1000px) and (max-width: 1080px) {
+            font-size: 3rem;
+            line-height: 3rem;
+        }
+    }
 }
 
 .nameContainer {
@@ -32,6 +176,10 @@
 .instructionOrValue,
 .volume {
     margin-top: 0.5rem;
+
+    @media (max-width: 414px) {
+        display: flex;
+    }
 }
 
 .status {
@@ -77,6 +225,16 @@
 
 .volumeContainer {
     margin-top: 1rem;
+
+    @media (min-width: 415px) and (max-width: 720px) {
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    @media (min-width: 1000px) and (max-width: 1080px) {
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+    }
 }
 
 .ml {
@@ -102,6 +260,10 @@
 
 .done {
     margin-top: 1.5rem;
+
+    @media (min-width: 415px) and (max-width: 720px) {
+        margin-top: 3rem;
+    }
 }
 
 @keyframes ellipsis {

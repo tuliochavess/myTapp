@@ -4,14 +4,15 @@
 
 .errorContainer,
 .errorContainer2or1 {
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .errorContainer {
-    @media (max-width: 1280px) {
+    @media (min-width: 721px) and (max-width: 1280px) {
         width: 25rem;
     }
 
@@ -21,12 +22,27 @@
 }
 
 .errorContainer2or1 {
-    @media (max-width: 1280px) {
+    @media (max-width: 414px) {
+        width: 100%;
+        margin-left: -1rem;
+    }
+
+    @media (min-width: 415px) and (max-width: 720px) {
+        width: 100%;
+        margin-left: -1rem;
+    }
+
+    @media (min-width: 721px) and (max-width: 1280px) {
         width: 37rem;
     }
 
     @media (min-width: 1281px) and (max-width: 1920px) {
         width: 57rem;
+    }
+
+    @media (min-width: 1000px) and (max-width: 1080px) {
+        width: 100%;
+        margin-left: -1rem;
     }
 }
 
@@ -44,11 +60,12 @@
 }
 
 .errorTtile {
-    @media (max-width: 1280px) {
+    
+    @media (min-width: 721px) and (max-width: 1280px) {
         font-size: 1.5rem;
         line-height: 1.75rem;
     }
-
+    
     @media (min-width: 1281px) and (max-width: 1920px) {
         font-size: 1.5rem;
         line-height: 1.75rem;
@@ -56,14 +73,23 @@
 }
 
 .errorTtile2or1 {
-    @media (max-width: 1280px) {
+    @media (min-width: 415px) and (max-width: 720px) {
         font-size: 2rem;
         line-height: 2.5rem;
     }
 
+    @media (min-width: 721px) and (max-width: 1280px) {
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+    
     @media (min-width: 1281px) and (max-width: 1920px) {
         font-size: 2.5rem;
         line-height: 2.75rem;
+    }
+    @media (min-width: 1000px) and (max-width: 1080px) {
+        font-size: 3rem;
+        line-height: 3.5rem;
     }
 }
 
@@ -75,7 +101,7 @@
 }
 
 .tapId {
-    @media (max-width: 1280px) {
+    @media (min-width: 721px) and (max-width: 1280px) {
         line-height: 1.75rem;
         font-size: 1.5rem;
     }
@@ -87,7 +113,12 @@
 }
 
 .tapId2or1 {
-    @media (max-width: 1280px) {
+    @media (min-width: 415px) and (max-width: 720px) {
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+    }
+
+    @media (min-width: 721px) and (max-width: 1280px) {
         font-size: 2.5rem;
         line-height: 2.5rem;
     }
@@ -95,6 +126,11 @@
     @media (min-width: 1281px) and (max-width: 1920px) {
         line-height: 3rem;
         font-size: 3rem;
+    }
+
+    @media (min-width: 1000px) and (max-width: 1080px) {
+        font-size: 3rem;
+        line-height: 3.5rem;
     }
 }
 
@@ -104,7 +140,7 @@
 }
 
 .errorImg {
-    @media (max-width: 1280px) {
+    @media (min-width: 721px) and (max-width: 1280px) {
         max-height: 6rem;
     }
 
@@ -114,11 +150,23 @@
 }
 
 .errorImg2or1 {
-    @media (max-width: 1280px) {
+    @media (max-width: 414px) {
+        max-height: 8rem;
+    }
+  
+    @media (min-width: 415px) and (max-width: 720px) {
+        max-height: 10rem;
+    }
+
+    @media (min-width: 721px) and (max-width: 1280px) {
         max-height: 8rem;
     }
 
     @media (min-width: 1281px) and (max-width: 1920px) {
         max-height: 10rem;
+    }
+
+    @media (min-width: 1000px) and (max-width: 1080px) {
+        max-height: 15rem;
     }
 }

@@ -67,7 +67,9 @@ export default function DefaultTap(props: Props) {
     }
     if (type === 'sangria') {
       return <div
-        className={`${styles.modalSangria} ${displayModal ? styles.show : ' '}`}>
+        className={`${styles.modalSangria} ${displayModal ? styles.show : ' '} ${props.tappAmount == 3 ?
+          '' :
+          styles.modalSangria2or1}`}>
         <ModalSangria
           flow={props.sangriaFlow!}
           highFlow={props.sangriaHighFlow}
@@ -81,7 +83,9 @@ export default function DefaultTap(props: Props) {
     }
     if (type === 'staff') {
       return <div
-        className={`${styles.modalStaff} ${displayModal ? styles.show : ' '}`}>
+        className={`${styles.modalStaff} ${displayModal ? styles.show : ' '} ${props.tappAmount == 3 ?
+          '' :
+          styles.modalStaff2or1}`}>
         <ModalStaff
           employee={props.staffEmployee!}
           flow={props.staffFlow!}
@@ -94,9 +98,31 @@ export default function DefaultTap(props: Props) {
   }
 
   function renderInfosAndQrCode(width: number, amount: number) {
-    if ((width >= 1280 && width < 1919) && amount == 3) {
-      return <div className={styles.infosAndQrCode}>
-        <div>
+    if (amount == 3) {
+      if (width >= 1280 && width < 1919) {
+        return <div className={styles.infosAndQrCode}>
+          <div>
+            <div className={styles.ibuAndAbv}>
+              <IbuOrAbv
+                type="ibu"
+                value={props.ibu}
+                class={styles.firstElement}
+              />
+              <IbuOrAbv type="abv" value={props.abv} />
+            </div>
+            <div className={styles.price}>
+              <Price ml="100" value={props.price} tappAmount={props.tappAmount} />
+            </div>
+          </div>
+          <QrCode qrCode={props.qrCode} class={styles.qrCode} />
+        </div>
+      }
+
+      if (width >= 1920 && width < 2959) {
+        return <div className={styles.infosAndQrCode}>
+          <div className={styles.price}>
+            <Price ml="100" value={props.price} tappAmount={props.tappAmount} />
+          </div>
           <div className={styles.ibuAndAbv}>
             <IbuOrAbv
               type="ibu"
@@ -105,15 +131,49 @@ export default function DefaultTap(props: Props) {
             />
             <IbuOrAbv type="abv" value={props.abv} />
           </div>
+          <QrCode qrCode={props.qrCode} class={styles.qrCode} />
+        </div>
+      }
+    }
+
+    if (amount == 2) {
+      if (width >= 1280 && width < 1919) {
+        return <div className={styles.infosAndQrCode}>
           <div className={styles.price}>
             <Price ml="100" value={props.price} tappAmount={props.tappAmount} />
           </div>
+          <div className={styles.ibuAndAbv2or1}>
+            <IbuOrAbv
+              type="ibu"
+              value={props.ibu}
+              class={styles.firstElement2or1}
+            />
+            <IbuOrAbv type="abv" value={props.abv} />
+          </div>
+          <QrCode qrCode={props.qrCode} class={styles.qrCode} />
         </div>
-        <QrCode qrCode={props.qrCode} class={styles.qrCode} />
-      </div>
+      }
+
+      if (width >= 1920 && width < 2959) {
+        return <div className={styles.infosAndQrCode}>
+          <div className={styles.price}>
+            <Price ml="100" value={props.price} tappAmount={props.tappAmount} />
+          </div>
+          <div className={styles.ibuAndAbv2or1}>
+            <IbuOrAbv
+              type="ibu"
+              value={props.ibu}
+              class={styles.firstElement2or1}
+            />
+            <IbuOrAbv type="abv" value={props.abv} />
+          </div>
+          <QrCode qrCode={props.qrCode} class={styles.qrCode} />
+        </div>
+      }
+
     }
 
-    if ((width >= 1280 && width < 1919) && amount < 3) {
+    if (amount == 1) {
       return <div className={styles.infosAndQrCode}>
         <div className={styles.price}>
           <Price ml="100" value={props.price} tappAmount={props.tappAmount} />
@@ -126,41 +186,7 @@ export default function DefaultTap(props: Props) {
           />
           <IbuOrAbv type="abv" value={props.abv} />
         </div>
-        <QrCode qrCode={props.qrCode} class={styles.qrCode} />
-      </div>
-    }
-
-    if ((width >= 1920 && width < 2959) && amount == 3) {
-      return <div className={styles.infosAndQrCode}>
-        <div className={styles.price}>
-          <Price ml="100" value={props.price} tappAmount={props.tappAmount} />
-        </div>
-        <div className={styles.ibuAndAbv}>
-          <IbuOrAbv
-            type="ibu"
-            value={props.ibu}
-            class={styles.firstElement}
-          />
-          <IbuOrAbv type="abv" value={props.abv} />
-        </div>
-        <QrCode qrCode={props.qrCode} class={styles.qrCode} />
-      </div>
-    }
-
-    if ((width >= 1920 && width < 2959) && amount < 3) {
-      return <div className={styles.infosAndQrCode}>
-        <div className={styles.price}>
-          <Price ml="100" value={props.price} tappAmount={props.tappAmount} />
-        </div>
-        <div className={styles.ibuAndAbv2or1}>
-          <IbuOrAbv
-            type="ibu"
-            value={props.ibu}
-            class={styles.firstElement2or1}
-          />
-          <IbuOrAbv type="abv" value={props.abv} />
-        </div>
-        <QrCode qrCode={props.qrCode} class={styles.qrCode} />
+        {screenWidth > 414 ? <QrCode qrCode={props.qrCode} class={styles.qrCode} /> : null}
       </div>
     }
   }
@@ -174,7 +200,7 @@ export default function DefaultTap(props: Props) {
       <div className={styles.firstRow}
         onClick={() => setDisplayModal(!displayModal)}>
         <div className={styles.numberAndTitleOrStyle}>
-          <TapNumber number={props.tapNumber} />
+          <TapNumber number={props.tapNumber} tappAmount={props.tappAmount} />
           <NameStyleMode
             tappAmount={props.tappAmount}
             type={props.type === 'name' ? 'name' : 'style'}

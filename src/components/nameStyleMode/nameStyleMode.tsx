@@ -10,6 +10,30 @@ interface Props {
 export default function NameStyleMode(props: Props) {
   const screenWidth = window.innerWidth;
 
+  function setFontSizeMobile(length: number) {
+    if (length <= 17) {
+      return { fontSize: "2rem", lineHeight: "2rem" };
+    }
+    if (length >= 18 && length <= 22) {
+      return { fontSize: "1.5rem", lineHeight: "1.5rem" };
+    }
+    if (length > 22 && length <= 28) {
+      return { fontSize: "1.3rem", lineHeight: "1.6rem" };
+    }
+    if (length > 28) {
+      return { fontSize: "1.2rem", lineHeight: "1.4rem" };
+    }
+  }
+
+  function setFontSizeHDVertical(length: number) {
+    if (length <= 28) {
+      return { fontSize: "2.6rem", lineHeight: "2.6rem" };
+    }
+    if (length > 28) {
+      return { fontSize: "2.3rem", lineHeight: "2.6rem" };
+    }
+  }
+
   function setFontSizeHD(length: number, tappAmount: number) {
     if (tappAmount == 3) {
       if (length <= 9) {
@@ -62,11 +86,33 @@ export default function NameStyleMode(props: Props) {
     }
   }
 
+  function setFontSizeFullHDVertical(length: number) {
+    if (length <= 22) {
+      return { fontSize: "5rem", lineHeight: "5rem" };
+    }
+    if (length > 22 && length <= 27) {
+      return { fontSize: "4rem", lineHeight: "4rem" };
+    }
+    if (length > 27) {
+      return { fontSize: "3rem", lineHeight: "3rem" };
+    }
+    
+  }
+
   function setFontSizeByWidth(width: number, length: number, tappAmount: number) {
+    if (width <= 414) {
+      return setFontSizeMobile(length)
+    }
+    if (width >= 415 && width <= 720) {
+      return setFontSizeHDVertical(length)
+    }
     if (width >= 1280 && width < 1919) {
       return setFontSizeHD(length, tappAmount)
     }
-    if (width >= 1920 && width < 2959) {
+    if (width >= 1000 && width <= 1080) {
+      return setFontSizeFullHDVertical(length)
+    }
+    if (width >= 1920) {
       return setFontSizeFullHD(length, tappAmount)
     }
   }

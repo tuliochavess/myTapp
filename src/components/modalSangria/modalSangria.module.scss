@@ -5,6 +5,16 @@
     font-size: 1rem;
     font-weight: 500;
     line-height: 1rem;
+
+    @media (min-width: 415px) and (max-width: 720px) {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+
+    @media (min-width: 1000px) and (max-width: 1080px) {
+        font-size: 3rem;
+        line-height: 3rem;
+    }
 }
 
 .sangria {
@@ -12,6 +22,16 @@
     font-weight: 700;
     line-height: 1.5rem;
     margin-left: 0.5rem;
+
+    @media (min-width: 415px) and (max-width: 720px) {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+
+    @media (min-width: 1000px) and (max-width: 1080px) {
+        font-size: 3.5rem;
+        line-height: 3.5rem;
+    }
 }
 
 .instructions {
@@ -20,6 +40,16 @@
     font-weight: 500;
     line-height: 1rem;
     margin-top: 0.6rem;
+
+    @media (min-width: 415px) and (max-width: 720px) {
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+    }
+
+    @media (min-width: 1000px) and (max-width: 1080px) {
+        font-size: 1.7rem;
+        line-height: 2rem;
+    }
 }
 
 .flowRate,
@@ -38,6 +68,16 @@
     font-size: 1.8rem;
     font-weight: 700;
     line-height: 1.8rem;
+
+    @media (min-width: 415px) and (max-width: 720px) {
+        font-size: 2.8rem;
+        line-height: 2.8rem;
+    }
+
+    @media (min-width: 1000px) and (max-width: 1080px) {
+        font-size: 4rem;
+        line-height: 4rem;
+    }
 }
 
 .highFlow {
@@ -46,6 +86,16 @@
     font-weight: 600;
     line-height: 1rem;
     margin-left: 1rem;
+
+    @media (min-width: 415px) and (max-width: 720px) {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+    }
+
+    @media (min-width: 1000px) and (max-width: 1080px) {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
 }
 
 .rightFlow {
@@ -53,6 +103,16 @@
     font-size: 0.75rem;
     font-weight: 500;
     line-height: 0.75rem;
+
+    @media (min-width: 415px) and (max-width: 720px) {
+        font-size: 1.3rem;
+        line-height: 2rem;
+    }
+
+    @media (min-width: 1000px) and (max-width: 1080px) {
+        font-size: 2rem;
+        line-height: 3rem;
+    }
 }
 
 .alertHighFlow {
@@ -66,6 +126,22 @@
     font-size: 1rem;
     font-weight: 500;
     line-height: 1.25rem;
+
+    @media (max-width: 414px) {
+        display: block;
+    }
+
+    @media (min-width: 415px) and (max-width: 720px) {
+        display: block;
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+
+    @media (min-width: 1000px) and (max-width: 1080px) {
+        display: block;
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
 }
 
 .tapId {
@@ -75,4 +151,19 @@
 
 .tapIp {
     margin-left: 7%;
+
+    @media (max-width: 414px) {
+        margin-left: 0;
+        margin-top: 0.5rem;
+    }
+
+    @media (min-width: 415px) and (max-width: 720px) {
+        margin-left: 0;
+        margin-top: 0.5rem;
+    }
+
+    @media (min-width: 1000px) and (max-width: 1080px) {
+        margin-left: 0;
+        margin-top: 0.5rem;
+    }
 }

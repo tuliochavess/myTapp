@@ -29,7 +29,7 @@ function showState(state: string) {
 }
 
 export default function ModalClient(props: Props) {
-    return <div className={styles.modalClientContainer}>
+    return <div className={props.tappAmount == 3 ? styles.modalClientContainer : styles.modalClientContainer2or1}>
         <div className={styles.firstColum}>
             <div className={styles.nameContainer}>
                 <div className={styles.nameRow}>

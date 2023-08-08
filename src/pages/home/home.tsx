@@ -9,10 +9,12 @@ import ErrorPage from "../error/error";
 import { ReactNode, useEffect, useState } from "react";
 
 export default function Home() {
-  const [tappAmount, setTappAmount] = useState(2)
+  const [tappAmount, setTappAmount] = useState(1)
   const [tapp1, setTapp1] = useState<ReactNode>()
   const [tapp2, setTapp2] = useState<ReactNode>()
   const [tapp3, setTapp3] = useState<ReactNode>()
+
+  const condition = tappAmount >= 2 ? styles.homeContainer : styles.homeContainer1
 
   useEffect(() => {
     setTapp1(
@@ -20,10 +22,10 @@ export default function Home() {
         tappAmount={tappAmount}
         tapNumber={1}
         type="name"
-        name="RUSSIAN IMPERIAL STOUT DRAFT BEER"
+        name="LAGER STOUT"
         image={cerveja}
         logo={logoCerveja}
-        style="NEW ZEALAND"
+        style="LAGER"
         ibu="12"
         abv="3,0"
         price="3,50"
@@ -34,6 +36,58 @@ export default function Home() {
         clientVolume={0}
         clientState="ready"
       />
+
+      // <DefaultTap
+      //   tappAmount={tappAmount}
+      //   tapNumber={2}
+      //   type="name"
+      //   name="PILSEN"
+      //   image={cerveja}
+      //   style="ZEALAND"
+      //   ibu="88"
+      //   abv="5,5"
+      //   price="4,20"
+      //   qrCode={qrCode}
+      //   modal="sangria"
+      //   sangriaFlow={33}
+      //   sangriaHighFlow
+      //   sangriaTotal={100}
+      //   sangriaTapId={4}
+      //   sangriaServerIp="127.17.140.43"
+      //   sangriaTapIp="127.17.140.43"
+      // />
+
+      // <DefaultTap
+      //   tappAmount={tappAmount}
+      //   tapNumber={3}
+      //   type="name"
+      //   name="PILSEN AROMATIC"
+      //   image={cerveja}
+      //   style="LAGER"
+      //   ibu="40"
+      //   abv="4,2"
+      //   price="2,70"
+      //   qrCode={qrCode}
+      //   modal="staff"
+      //   staffEmployee="Túlio Chaves"
+      //   staffFlow={20}
+      //   staffTotal={200}
+      // />
+
+      // <Cleaning
+      //   tappAmount={tappAmount}
+      //   tapNumber={2}
+      //   employee={"Túlio Chaves"}
+      //   flow={500}
+      //   total={2000}
+      //   dateLastClean={"ontem"}
+      //   tapId={2}
+      //   dateNextClean={"amanhda"}
+      //   tapIp={"123.456.769"}
+      //   liter={2}
+      //   serverp={"123.4565.987"}
+      //   serverStatusOk={true}
+      // />
 
       // <ErrorPage
       //   type={"cable"}
@@ -80,35 +134,37 @@ export default function Home() {
       // />
     )
 
-    setTapp3(<DefaultTap
-      tappAmount={tappAmount}
-      tapNumber={3}
-      type="name"
-      name="PILSEN AROMATIC"
-      image={cerveja}
-      style="LAGER"
-      ibu="40"
-      abv="4,2"
-      price="2,70"
-      qrCode={qrCode}
-      modal="staff"
-      staffEmployee="Túlio Chaves"
-      staffFlow={20}
-      staffTotal={200}
-    />)
+    setTapp3(
+      <DefaultTap
+        tappAmount={tappAmount}
+        tapNumber={3}
+        type="name"
+        name="PILSEN AROMATIC"
+        image={cerveja}
+        style="LAGER"
+        ibu="40"
+        abv="4,2"
+        price="2,70"
+        qrCode={qrCode}
+        modal="staff"
+        staffEmployee="Túlio Chaves"
+        staffFlow={20}
+        staffTotal={200}
+      />
+    )
   }, []);
 
 
   function renderTapps(amount: number) {
     if (amount == 1) {
-      return <div className={styles.homeContainer}>
+      return <div className={condition}>
         <div>
           {tapp1}
         </div>
       </div>
     }
     if (amount == 2) {
-      return <div className={styles.homeContainer}>
+      return <div className={condition}>
         <div>
           {tapp1}
         </div>
@@ -118,7 +174,7 @@ export default function Home() {
       </div>
     }
     if (amount == 3) {
-      return <div className={styles.homeContainer}>
+      return <div className={condition}>
         <div>
           {tapp1}
         </div>

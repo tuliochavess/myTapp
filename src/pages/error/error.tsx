@@ -107,7 +107,7 @@ export default function ErrorPage(props: Props) {
 
     return <>
         <div className={styles.tapNumber} onClick={() => setDefaultError(!defaultError)}>
-            <TapNumber number={props.tapNumber} />
+            <TapNumber number={props.tapNumber} tappAmount={props.tappAmount} />
         </div>
         <div className={props.tappAmount == 3 ?
             styles.errorContainer :

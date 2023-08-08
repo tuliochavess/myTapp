@@ -42,7 +42,7 @@ export default function Cleaning(props: Props) {
         styles.cleaningContainer2or1}>
         <div className={styles.firstRow}>
             <div className={styles.title}>
-                <TapNumber number={props.tapNumber} />
+                <TapNumber number={props.tapNumber} tappAmount={props.tappAmount} />
                 <NameStyleMode
                     type={"mode"}
                     content={'LIMPEZA'}

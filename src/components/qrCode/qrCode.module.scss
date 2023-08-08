@@ -9,12 +9,18 @@
   font-weight: 700;
   letter-spacing: 0.04375rem;
 
-  @media (max-width: 1280px) {
+  @media (min-width: 721px) and (max-width: 1280px) {
     font-size: 0.875rem;
   }
 
   @media (min-width: 1281px) and (max-width: 1920px) {
     font-size: 1rem;
+    margin-bottom: 0.1rem;
+  }
+
+  @media (min-width: 1000px) and (max-width: 1080px) {
+    font-size: 1.5rem;
+    white-space: nowrap;
     margin-bottom: 0.1rem;
   }
 }
@@ -24,7 +30,7 @@
   font-weight: 700;
   letter-spacing: 0.04375rem;
 
-  @media (max-width: 1280px) {
+  @media (min-width: 721px) and (max-width: 1280px) {
     font-size: 0.875rem;
   }
 
@@ -32,10 +38,16 @@
     font-size: 1rem;
     margin-top: 0.1rem;
   }
+
+  @media (min-width: 1000px) and (max-width: 1080px) {
+    font-size: 1.5rem;
+    white-space: nowrap;
+    margin-bottom: 0.1rem;
+  }
 }
 
 .qrCodeImg {
-  @media (max-width: 1280px) {
+  @media (min-width: 721px) and (max-width: 1280px) {
     width: 6.6875rem;
     height: 6.6875rem;
   }
@@ -43,5 +55,10 @@
   @media (min-width: 1281px) and (max-width: 1920px) {
     width: 7rem;
     height: 7rem;
+  }
+
+  @media (min-width: 1000px) and (max-width: 1080px) {
+    width: 10rem;
+    height: 10rem;
   }
 }
