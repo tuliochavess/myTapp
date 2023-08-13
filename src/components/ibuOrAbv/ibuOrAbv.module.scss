@@ -40,6 +40,11 @@
     font-size: 1.5rem;
     line-height: 1.5rem;
   }
+
+  @media (min-width: 1921px) {
+    font-size: 1rem;
+    line-height: 0.6rem;
+  }
 }
 
 .name {
@@ -68,6 +73,11 @@
   @media (min-width: 1000px) and (max-width: 1080px) {
     font-size: 4rem;
     line-height: 4rem;
+  }
+
+  @media (min-width: 1921px) {
+    font-size: 3rem;
+    line-height: 3rem;
   }
 }
 
@@ -98,10 +108,16 @@
     font-size: 3.4rem;
     line-height: 3.4rem;
   }
-  
+
   @media (min-width: 1000px) and (max-width: 1080px) {
     margin-left: 1rem;
     font-size: 6rem;
     line-height: 6rem;
+  }
+
+  @media (min-width: 1921px) {
+    margin-left: 0.3rem;
+    font-size: 4.2rem;
+    line-height: 3.5rem;
   }
 }

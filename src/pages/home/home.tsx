@@ -9,7 +9,7 @@ import ErrorPage from "../error/error";
 import { ReactNode, useEffect, useState } from "react";
 
 export default function Home() {
-  const [tappAmount, setTappAmount] = useState(1)
+  const [tappAmount, setTappAmount] = useState(3)
   const [tapp1, setTapp1] = useState<ReactNode>()
   const [tapp2, setTapp2] = useState<ReactNode>()
   const [tapp3, setTapp3] = useState<ReactNode>()
@@ -118,7 +118,7 @@ export default function Home() {
         sangriaTapIp="127.17.140.43"
       />
 
-      // <Cleaning
+      //   <Cleaning
       //   tappAmount={tappAmount}
       //   tapNumber={2}
       //   employee={"Túlio Chaves"}
@@ -131,6 +131,13 @@ export default function Home() {
       //   liter={2}
       //   serverp={"123.4565.987"}
       //   serverStatusOk={true}
+      // />
+
+      // <ErrorPage
+      //   type={"cable"}
+      //   tapNumber={1}
+      //   tappAmount={tappAmount}
+      //   tapId={3}
       // />
     )
 
@@ -157,14 +164,14 @@ export default function Home() {
 
   function renderTapps(amount: number) {
     if (amount == 1) {
-      return <div className={condition}>
+      return <div className={`${condition} ${styles.full}'`}>
         <div>
           {tapp1}
         </div>
       </div>
     }
     if (amount == 2) {
-      return <div className={condition}>
+      return <div className={`${condition} ${styles.half}`}>
         <div>
           {tapp1}
         </div>
@@ -174,7 +181,7 @@ export default function Home() {
       </div>
     }
     if (amount == 3) {
-      return <div className={condition}>
+      return <div className={`${condition} ${styles.threeThirds}`}>
         <div>
           {tapp1}
         </div>

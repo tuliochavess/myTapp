@@ -1,12 +1,28 @@
-.homeContainer {
-  display: flex;
-  justify-content: space-around;
+.homeContainer,
+.homeContainer2,
+.homeContainer3 {
+  background: radial-gradient(58.76% 73.16% at 126.72% 34.58%, rgba(249, 182, 3, 0.12) 17.58%, rgba(0, 0, 0, 0.00) 100%);
   width: 100vw;
   height: 100vh;
 }
 
+.homeContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
 .homeContainer1 {
-  width: 100vw;
-  height: 100vh;
   padding: 0 1rem;
+}
+
+.threeThirds {
+  background-size: 33.3% !important;
+}
+
+.half {
+  background-size: 50%;
+}
+
+.full {
+  background-size: 100%;
 }

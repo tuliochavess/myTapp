@@ -5,6 +5,10 @@
     position: absolute;
     margin-top: -2rem;
     right: 1rem;
+
+    @media (min-width: 1921px) {
+        margin-top: -3rem;
+    }
 }
 
 .timer {

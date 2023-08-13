@@ -8,7 +8,6 @@ import ModalClient from "../../components/modalClient";
 import ModalSangria from "../../components/modalSangria/modalSangria";
 import ModalStaff from "../../components/modalStaff/modalStaff";
 import NameStyleMode from "../../components/nameStyleMode";
-import { backGround } from "../../helper/constants";
 
 interface Client {
   clientName?: string
@@ -118,7 +117,7 @@ export default function DefaultTap(props: Props) {
         </div>
       }
 
-      if (width >= 1920 && width < 2959) {
+      if (width >= 1920) {
         return <div className={styles.infosAndQrCode}>
           <div className={styles.price}>
             <Price ml="100" value={props.price} tappAmount={props.tappAmount} />
@@ -154,7 +153,7 @@ export default function DefaultTap(props: Props) {
         </div>
       }
 
-      if (width >= 1920 && width < 2959) {
+      if (width >= 1920) {
         return <div className={styles.infosAndQrCode}>
           <div className={styles.price}>
             <Price ml="100" value={props.price} tappAmount={props.tappAmount} />
@@ -196,7 +195,7 @@ export default function DefaultTap(props: Props) {
       className={props.tappAmount == 3 ?
         styles.defaultTapContainer :
         styles.defaultTapContainer2or1}
-      style={props.tappAmount >= 2 ? { background: backGround } : {}}>
+      >
       <div className={styles.firstRow}
         onClick={() => setDisplayModal(!displayModal)}>
         <div className={styles.numberAndTitleOrStyle}>

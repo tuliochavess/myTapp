@@ -19,6 +19,10 @@
     @media (min-width: 1281px) and (max-width: 1920px) {
         width: 37rem;
     }
+
+    @media (min-width: 1921px) {
+        width: 40rem;
+    }
 }
 
 .errorContainer2or1 {
@@ -44,6 +48,10 @@
         width: 100%;
         margin-left: -1rem;
     }
+
+    @media (min-width: 1921px) {
+        width: 60rem;
+    }
 }
 
 .errorComponent {
@@ -60,12 +68,12 @@
 }
 
 .errorTtile {
-    
+
     @media (min-width: 721px) and (max-width: 1280px) {
         font-size: 1.5rem;
         line-height: 1.75rem;
     }
-    
+
     @media (min-width: 1281px) and (max-width: 1920px) {
         font-size: 1.5rem;
         line-height: 1.75rem;
@@ -82,11 +90,12 @@
         font-size: 2rem;
         line-height: 2.5rem;
     }
-    
+
     @media (min-width: 1281px) and (max-width: 1920px) {
         font-size: 2.5rem;
         line-height: 2.75rem;
     }
+
     @media (min-width: 1000px) and (max-width: 1080px) {
         font-size: 3rem;
         line-height: 3.5rem;
@@ -153,7 +162,7 @@
     @media (max-width: 414px) {
         max-height: 8rem;
     }
-  
+
     @media (min-width: 415px) and (max-width: 720px) {
         max-height: 10rem;
     }
