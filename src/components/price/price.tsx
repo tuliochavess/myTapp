@@ -4,7 +4,8 @@ interface Props {
   ml: string;
   value: string;
   tappAmount: number
-  promotion: number
+  promotion?: number;
+  oldValue?: string
 }
 
 export default function Price(props: Props) {
@@ -24,9 +25,14 @@ export default function Price(props: Props) {
         styles.value :
         styles.value2or1}>
         {props.promotion ?
-          <span className={styles.promotion}>
-            {`-${props.promotion}%`}
-          </span> :
+          <div className={styles.promotion}>
+            <span className={styles.promotionMessage}>
+              {`R$ ${props.oldValue}`}
+            </span>
+            <span className={styles.promotionValue}>
+              {` com -${props.promotion}%`}
+            </span>
+          </div> :
           null}
         {props.value}
       </div>

@@ -49,6 +49,7 @@ interface Props extends Client, Sangria, Staff {
   qrCode: string;
   modal: 'client' | 'sangria' | 'staff';
   promotion?: number
+  oldPrice?: string
 }
 
 export default function DefaultTap(props: Props) {
@@ -115,7 +116,13 @@ export default function DefaultTap(props: Props) {
               <IbuOrAbv type="abv" value={props.abv} />
             </div>
             <div className={styles.price}>
-              <Price ml="100" value={props.price} tappAmount={props.tappAmount} promotion={props.promotion!} />
+              <Price
+                ml="100"
+                value={props.price}
+                tappAmount={props.tappAmount}
+                promotion={props.promotion!}
+                oldValue={props.oldPrice}
+              />
             </div>
           </div>
           <QrCode qrCode={props.qrCode} class={styles.qrCode} />
@@ -125,7 +132,13 @@ export default function DefaultTap(props: Props) {
       if (width >= 1920) {
         return <div className={styles.infosAndQrCode}>
           <div className={styles.price}>
-            <Price ml="100" value={props.price} tappAmount={props.tappAmount} promotion={props.promotion!} />
+            <Price
+              ml="100"
+              value={props.price}
+              tappAmount={props.tappAmount}
+              promotion={props.promotion!}
+              oldValue={props.oldPrice}
+            />
           </div>
           <div className={styles.ibuAndAbv}>
             <IbuOrAbv
@@ -144,7 +157,13 @@ export default function DefaultTap(props: Props) {
       if (width >= 1280 && width < 1919) {
         return <div className={styles.infosAndQrCode}>
           <div className={styles.price}>
-            <Price ml="100" value={props.price} tappAmount={props.tappAmount} promotion={props.promotion!} />
+            <Price
+              ml="100"
+              value={props.price}
+              tappAmount={props.tappAmount}
+              promotion={props.promotion!}
+              oldValue={props.oldPrice}
+            />
           </div>
           <div className={styles.ibuAndAbv2or1}>
             <IbuOrAbv
@@ -161,7 +180,12 @@ export default function DefaultTap(props: Props) {
       if (width >= 1920) {
         return <div className={styles.infosAndQrCode}>
           <div className={styles.price}>
-            <Price ml="100" value={props.price} tappAmount={props.tappAmount} promotion={props.promotion!} />
+            <Price
+              ml="100"
+              value={props.price}
+              tappAmount={props.tappAmount}
+              promotion={props.promotion!}
+              oldValue={props.oldPrice} />
           </div>
           <div className={styles.ibuAndAbv2or1}>
             <IbuOrAbv
@@ -179,7 +203,13 @@ export default function DefaultTap(props: Props) {
     if (amount == 1) {
       return <div className={styles.infosAndQrCode}>
         <div className={styles.price}>
-          <Price ml="100" value={props.price} tappAmount={props.tappAmount} promotion={props.promotion!} />
+          <Price
+            ml="100"
+            value={props.price}
+            tappAmount={props.tappAmount}
+            promotion={props.promotion!}
+            oldValue={props.oldPrice}
+          />
         </div>
         <div className={styles.ibuAndAbv2or1}>
           <IbuOrAbv
