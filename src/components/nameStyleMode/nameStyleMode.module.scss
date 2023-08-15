@@ -6,11 +6,11 @@
     padding-right: 1rem;
   }
 
-  @media (min-width: 721px) and (max-width: 1280px) {
+  @media (min-width: 721px) and (max-width: 1366px) {
     height: 5.25rem;
   }
 
-  @media (min-width: 1281px) and (max-width: 1920px) {
+  @media (min-width: 1367px) and (max-width: 1920px) {
     height: 7rem;
   }
 }
@@ -25,13 +25,13 @@
     margin-bottom: 0.25rem;
   }
 
-  @media (min-width: 721px) and (max-width: 1280px) {
+  @media (min-width: 721px) and (max-width: 1366px) {
     font-size: 1rem;
     line-height: 1rem;
     margin-bottom: 0.25rem;
   }
 
-  @media (min-width: 1281px) and (max-width: 1920px) {
+  @media (min-width: 1367px) and (max-width: 1920px) {
     font-size: 1.6rem;
     line-height: 1.6rem;
     margin-bottom: 0.2rem;

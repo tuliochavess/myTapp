@@ -4,6 +4,7 @@ interface Props {
   ml: string;
   value: string;
   tappAmount: number
+  promotion: number
 }
 
 export default function Price(props: Props) {
@@ -21,7 +22,14 @@ export default function Price(props: Props) {
       </div>
       <div className={props.tappAmount == 3 ?
         styles.value :
-        styles.value2or1}>{props.value}</div>
+        styles.value2or1}>
+        {props.promotion ?
+          <span className={styles.promotion}>
+            {`-${props.promotion}%`}
+          </span> :
+          null}
+        {props.value}
+      </div>
     </div>
   );
 }

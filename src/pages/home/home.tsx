@@ -9,7 +9,7 @@ import ErrorPage from "../error/error";
 import { ReactNode, useEffect, useState } from "react";
 
 export default function Home() {
-  const [tappAmount, setTappAmount] = useState(3)
+  const [tappAmount, setTappAmount] = useState(2)
   const [tapp1, setTapp1] = useState<ReactNode>()
   const [tapp2, setTapp2] = useState<ReactNode>()
   const [tapp3, setTapp3] = useState<ReactNode>()
@@ -35,6 +35,10 @@ export default function Home() {
         clientCredit={50.32}
         clientVolume={0}
         clientState="ready"
+        exclusive
+        groupName="Grupo Sete Lagoas Futebol Clube Mineiro"
+        discount={30}
+        promotion={25}
       />
 
       // <DefaultTap
