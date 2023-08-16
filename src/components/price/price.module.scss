@@ -15,6 +15,68 @@
   white-space: nowrap;
 }
 
+.promotionValue {
+  text-decoration: line-through;
+  font-size: 14px;
+}
+
+// .etiqueta {
+//   right: -1.8rem;
+//   top: -0.8rem;
+//   width: 3rem;
+//   height: 3.5rem;
+//   position: absolute;
+//   background-color: red;
+//   clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 50% 100%, 0% 80%);
+// }
+
+// .conteudo {
+//   position: absolute;
+//   top: 10px;
+//   left: 10px;
+//   color: white;
+//   font-size: 16px;
+//   font-weight: bold;
+// }
+
+
+.etiqueta {
+  right: -1.8rem;
+  top: -0.2rem;
+  width: 46px;
+  height: 45px;
+  position: absolute;
+  background-color: red;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 50% 100%, 0% 80%);
+  display: flex;
+  flex-direction: column; /* Mudança para empilhar os elementos verticalmente */
+  justify-content: flex-start; /* Alinhamento no topo */
+  align-items: center; /* Alinhamento no centro horizontal */
+}
+
+.conteudo {
+
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  line-height: 0px;
+}
+
+.valor {
+  display: block;
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+
+  font-size: 12px;
+  margin-top: 9px;
+}
+
+.porcentagem {
+  font-size: 20px;
+  margin-top: 17px;
+}
+
+
 .ml {
   @media (min-width: 721px) and (max-width: 1366px) {
     font-size: 1rem;
@@ -146,6 +208,8 @@
   }
 
   .promotion {
+  rotate: 25deg;
+
     @media (min-width: 721px) and (max-width: 1366px) {
       padding: 0.3rem !important;
       font-size: 1rem !important;

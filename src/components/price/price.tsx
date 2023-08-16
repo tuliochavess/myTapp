@@ -25,14 +25,13 @@ export default function Price(props: Props) {
         styles.value :
         styles.value2or1}>
         {props.promotion ?
-          <div className={styles.promotion}>
-            <span className={styles.promotionMessage}>
-              {`R$ ${props.oldValue}`}
-            </span>
-            <span className={styles.promotionValue}>
-              {` com -${props.promotion}%`}
-            </span>
-          </div> :
+        <div className={styles.etiqueta}>
+          <div className={styles.conteudo}>
+            <span className={styles.valor}>R$ {props.oldValue}</span><br />
+            <p className={styles.porcentagem}>-{props.promotion}%</p>
+          </div>
+        </div>
+          :
           null}
         {props.value}
       </div>
